@@ -1,0 +1,255 @@
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.dashboard-section {
+  margin-bottom: 3rem;
+}
+
+.dashboard-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #3498db;
+}
+
+.dashboard-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard-event-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-event-card.past-event {
+  opacity: 0.7;
+  background-color: #f8f9fa;
+}
+
+.dashboard-event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.dashboard-event-header h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.event-category-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.event-category-badge.technology {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.event-category-badge.business {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.event-category-badge.entertainment {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.event-category-badge.health {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.event-category-badge.art {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.event-category-badge.marketing {
+  background-color: #fff9c4;
+  color: #f9a825;
+}
+
+.event-category-badge.food {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.event-category-badge.environment {
+  background-color: #e0f2f1;
+  color: #00796b;
+}
+
+.event-category-badge.fashion {
+  background-color: #f1f8e9;
+  color: #689f38;
+}
+
+.dashboard-event-info {
+  margin-bottom: 1rem;
+}
+
+.dashboard-event-info p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.dashboard-event-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.view-event-btn,
+.cancel-registration-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 120px;
+}
+
+.view-event-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.view-event-btn:hover {
+  background-color: #2980b9;
+}
+
+.cancel-registration-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.cancel-registration-btn:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+.cancel-registration-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.no-registrations {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-registrations h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.no-registrations p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.browse-events-btn {
+  padding: 1rem 2rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.browse-events-btn:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard-events-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-event-actions {
+    flex-direction: column;
+  }
+
+  .view-event-btn,
+  .cancel-registration-btn {
+    width: 100%;
+  }
+}

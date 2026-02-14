@@ -1,0 +1,143 @@
+.event-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.event-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.event-name {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.event-category {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.event-category.technology {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.event-category.business {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.event-category.entertainment {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.event-category.health {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.event-category.art {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.event-category.marketing {
+  background-color: #fff9c4;
+  color: #f9a825;
+}
+
+.event-category.food {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.event-category.environment {
+  background-color: #e0f2f1;
+  color: #00796b;
+}
+
+.event-category.fashion {
+  background-color: #f1f8e9;
+  color: #689f38;
+}
+
+.event-details {
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.event-details p {
+  margin: 0.5rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.event-organizer,
+.event-location,
+.event-date {
+  display: flex;
+  align-items: center;
+}
+
+.event-description {
+  color: #666;
+  line-height: 1.5;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.seats-available {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #27ae60;
+}
+
+.seats-available.sold-out {
+  color: #e74c3c;
+}
+
+.view-details-btn {
+  padding: 0.5rem 1.2rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.view-details-btn:hover {
+  background-color: #2980b9;
+}

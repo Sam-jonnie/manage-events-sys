@@ -1,0 +1,223 @@
+.event-details-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.event-details-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #bdc3c7;
+}
+
+.event-header-section {
+  margin-bottom: 2rem;
+}
+
+.event-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.event-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.event-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.event-badge.technology {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.event-badge.business {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.event-badge.entertainment {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.event-badge.health {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.event-badge.art {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.event-badge.marketing {
+  background-color: #fff9c4;
+  color: #f9a825;
+}
+
+.event-badge.food {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.event-badge.environment {
+  background-color: #e0f2f1;
+  color: #00796b;
+}
+
+.event-badge.fashion {
+  background-color: #f1f8e9;
+  color: #689f38;
+}
+
+.event-organizer-text {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.event-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-card {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  gap: 1rem;
+}
+
+.info-icon {
+  font-size: 2rem;
+}
+
+.info-content h3 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.info-content p {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.event-description-section {
+  margin-bottom: 2rem;
+}
+
+.event-description-section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.event-full-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.event-action-section {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  border-top: 2px solid #ecf0f1;
+}
+
+.register-btn,
+.login-required-btn,
+.sold-out-btn {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.register-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.register-btn:hover:not(:disabled) {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.register-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.login-required-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.login-required-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.sold-out-btn {
+  background-color: #e74c3c;
+  color: white;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .event-details-container {
+    padding: 1.5rem;
+  }
+
+  .event-title {
+    font-size: 2rem;
+  }
+
+  .event-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-btn,
+  .login-required-btn,
+  .sold-out-btn {
+    width: 100%;
+  }
+}
