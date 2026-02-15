@@ -63,7 +63,6 @@ const Dashboard = () => {
         throw new Error(data.message || 'Failed to cancel registration');
       }
 
-      // Refresh registrations
       fetchRegistrations();
       alert('Registration cancelled successfully');
     } catch (err) {

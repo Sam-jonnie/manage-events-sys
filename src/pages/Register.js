@@ -27,7 +27,6 @@ const Register = () => {
     e.preventDefault();
     setError('');
 
-    // Validation
     if (formData.password !== formData.confirmPassword) {
       setError('Passwords do not match');
       return;
@@ -59,7 +58,6 @@ const Register = () => {
         throw new Error(data.message || 'Registration failed');
       }
 
-      // Store user data and token
       login({
         id: data.id,
         name: data.name,
