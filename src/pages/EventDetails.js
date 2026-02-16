@@ -16,7 +16,7 @@ const EventDetails = () => {
 
   const fetchEventDetails = useCallback(async () => {
     try {
-      const response = await fetch(`/api/events/${id}`);
+      const response = await fetch(process.env.REACT_APP_API_URL+`/api/events/${id}`);
       const data = await response.json();
 
       if (!response.ok) {
@@ -46,7 +46,7 @@ const EventDetails = () => {
     setError('');
 
     try {
-      const response = await fetch(`/api/events/${id}/register`, {
+      const response = await fetch(process.env.REACT_APP_API_URL+`/api/events/${id}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

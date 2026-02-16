@@ -50,7 +50,7 @@ const Dashboard = () => {
     setCancellingId(eventId);
 
     try {
-      const response = await fetch(`/api/events/${eventId}/register`, {
+      const response = await fetch(process.env.REACT_APP_API_URL+`/api/events/${eventId}/register`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
