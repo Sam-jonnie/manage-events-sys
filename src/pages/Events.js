@@ -53,7 +53,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await fetch('/api/events');
+      const response = await fetch(process.env.REACT_APP_API_URL+'/api/events');
       const data = await response.json();
       
       if (!response.ok) {
@@ -71,7 +71,7 @@ const Events = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch('/api/events/categories/all');
+      const response = await fetch(process.env.REACT_APP_API_URL+'/api/events/categories/all');
       const data = await response.json();
       setCategories(data);
     } catch (err) {

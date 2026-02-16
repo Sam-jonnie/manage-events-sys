@@ -18,7 +18,7 @@ const Dashboard = () => {
 
   const fetchRegistrations = useCallback(async () => {
     try {
-      const response = await fetch('/api/user/registrations', {
+      const response = await fetch(process.env.REACT_APP_API_URL+'/api/user/registrations', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
