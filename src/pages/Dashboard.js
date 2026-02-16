@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/Dashboard.css';
@@ -16,11 +16,7 @@ const Dashboard = () => {
   const [error, setError] = useState('');
   const [cancellingId, setCancellingId] = useState(null);
 
-  useEffect(() => {
-    fetchRegistrations();
-  }, []);
-
-  const fetchRegistrations = async () => {
+  const fetchRegistrations = useCallback(async () => {
     try {
       const response = await fetch('/api/user/registrations', {
         headers: {
@@ -40,7 +36,11 @@ const Dashboard = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [token]); // token is the dependency
+
+  useEffect(() => {
+    fetchRegistrations();
+  }, [fetchRegistrations]); // now includes fetchRegistrations
 
   const handleCancelRegistration = async (eventId) => {
     if (!window.confirm('Are you sure you want to cancel this registration?')) {

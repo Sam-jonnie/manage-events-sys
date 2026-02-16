@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/EventDetails.css';
@@ -14,11 +14,7 @@ const EventDetails = () => {
   const [registering, setRegistering] = useState(false);
   const [message, setMessage] = useState('');
 
-  useEffect(() => {
-    fetchEventDetails();
-  }, [id]);
-
-  const fetchEventDetails = async () => {
+  const fetchEventDetails = useCallback(async () => {
     try {
       const response = await fetch(`/api/events/${id}`);
       const data = await response.json();
@@ -33,7 +29,11 @@ const EventDetails = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]); // id is the dependency
+
+  useEffect(() => {
+    fetchEventDetails();
+  }, [fetchEventDetails]); // now includes fetchEventDetails
 
   const handleRegister = async () => {
     if (!user) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import EventCard from '../components/EventCard';
 import '../styles/Events.css';
 
@@ -20,10 +20,36 @@ const Events = () => {
     fetchCategories();
   }, []);
 
+  const applyFilters = useCallback(() => {
+    let filtered = [...events];
+
+    // Search filter
+    if (searchTerm) {
+      filtered = filtered.filter(event =>
+        event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        event.description?.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    // Category filter
+    if (selectedCategory) {
+      filtered = filtered.filter(event => event.category === selectedCategory);
+    }
+
+    // Location filter
+    if (selectedLocation) {
+      filtered = filtered.filter(event =>
+        event.location.toLowerCase().includes(selectedLocation.toLowerCase())
+      );
+    }
+
+    setFilteredEvents(filtered);
+  }, [searchTerm, selectedCategory, selectedLocation, events]); // all dependencies
+
   // Apply filters whenever they change
   useEffect(() => {
     applyFilters();
-  }, [searchTerm, selectedCategory, selectedLocation, events]);
+  }, [applyFilters]); // now includes applyFilters
 
   const fetchEvents = async () => {
     try {
@@ -51,32 +77,6 @@ const Events = () => {
     } catch (err) {
       console.error('Failed to fetch categories:', err);
     }
-  };
-
-  const applyFilters = () => {
-    let filtered = [...events];
-
-    // Search filter
-    if (searchTerm) {
-      filtered = filtered.filter(event =>
-        event.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        event.description?.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-
-    // Category filter
-    if (selectedCategory) {
-      filtered = filtered.filter(event => event.category === selectedCategory);
-    }
-
-    // Location filter
-    if (selectedLocation) {
-      filtered = filtered.filter(event =>
-        event.location.toLowerCase().includes(selectedLocation.toLowerCase())
-      );
-    }
-
-    setFilteredEvents(filtered);
   };
 
   const clearFilters = () => {
